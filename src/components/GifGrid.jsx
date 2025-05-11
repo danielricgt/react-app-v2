@@ -13,20 +13,19 @@ export const GifGrid = ({ category }) => {
         setImages(newImages);
     }
 
-    useEffect( () => {
+    useEffect(() => {
         getImages();
-    }, [] );
-        
-  
+    }, []);
+
+
     return (
         <>
             <h1>{category}</h1>
-            <ol>
-                <li>TITULO 1</li>
-                <li>titulo 2</li>
-                <li>titulo 3</li>
-                <li>titulo 4</li>
-            </ol>
+            {images.map(({id, title}) => (<li key={id}>
+                    {title}
+            </li>))
+}
+
         </>
     )
 }
