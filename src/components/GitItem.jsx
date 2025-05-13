@@ -2,7 +2,7 @@
 
 export const GitItem = ({title, url}) => {
 
-    console.log(title, url);
+   //  console.log(title, url);
   return (
      <div className="card" >
 
