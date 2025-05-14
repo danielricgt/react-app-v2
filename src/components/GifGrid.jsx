@@ -19,6 +19,10 @@ console.log({isLoading});
     return (
         <>
             <h1>{category}</h1>
+            {
+                isLoading &&
+                <h2>Cargando</h2>
+            }
             {images.map((image) => (
             <GitItem className="card-" 
             key={image.id}
