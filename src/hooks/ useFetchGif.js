@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getGifs } from "../helpers/getgifs";
-
+const apiKey = import.meta.env.VITE_API_KEY;
 export const useFetchGif = (category) => {
 
 
@@ -8,7 +8,7 @@ export const useFetchGif = (category) => {
     const [isLoading, setIsLoading] = useState( true );
 
     const getImages = async () => {
-        const newImages = await getGifs(category);
+        const newImages = await getGifs(category, apiKey);
         setImages(newImages);
         setIsLoading(false);
 

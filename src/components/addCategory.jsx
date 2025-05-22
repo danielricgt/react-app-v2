@@ -1,4 +1,5 @@
 
+import PropTypes from "prop-types";
 import { useState } from "react"
 export const AddCategory = ({ onNewCategory }) => {
 
@@ -11,6 +12,7 @@ export const AddCategory = ({ onNewCategory }) => {
         setinputValue(target.value);
     }
     const onSubmit = (event) => {
+        console.log('Hola form dsde sumbit')
         event.preventDefault();
         if(inputValue.trim().length <= 1) return;
         // console.log(inputValue);
@@ -21,7 +23,7 @@ export const AddCategory = ({ onNewCategory }) => {
 
 
     return (
-        <form onSubmit={(event) => onSubmit(event)}>
+        <form  aria-label="form" onSubmit={(event) => onSubmit(event)}>
             <input type="text"
                 placeholder="Buscar Gifs"
                 value={inputValue}
@@ -29,4 +31,8 @@ export const AddCategory = ({ onNewCategory }) => {
             />
         </form>
     )
+}
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired,
 }
