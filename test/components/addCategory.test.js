@@ -12,15 +12,33 @@ describe("add Category component test", () => {
 
   test("must call on new category if input has a value", () => {
     const inputValue = "Dragon Ball";
-    // TODO
+    const onNewCategory = jest.fn();
 
-    render(<AddCategory onNewCategory={() => {}} />);
-    const input = screen.getByRole('textbox');
+    render(<AddCategory onNewCategory={onNewCategory} />);
+    const input = screen.getByRole("textbox");
     const form = screen.getByRole("form");
-    
-    fireEvent.input(input, { target: { value: { inputValue } } });
+
+    fireEvent.input(input, { target: { value: inputValue } });
     fireEvent.submit(form);
     screen.debug();
     expect(input.value).toBe("");
-});
+
+    expect(onNewCategory).toHaveBeenCalled();
+
+    expect(onNewCategory).toHaveBeenCalledTimes(1);
+    expect(onNewCategory).toHaveBeenCalledWith(inputValue);
+  });
+
+  test("should not to call the new category if the users does not write anything and submit the form", () => {
+    const onNewCategory = jest.fn();
+    render(<AddCategory onNewCategory={onNewCategory} />);
+
+    screen.debug();
+    const form = screen.getByRole("form");
+
+    fireEvent.submit(form);
+    expect(onNewCategory).toHaveBeenCalledTimes(0);
+    expect(onNewCategory).not.toHaveBeenCalled();
+
+  });
 });
