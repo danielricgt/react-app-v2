@@ -1,7 +1,7 @@
-// babel.config.js
 module.exports = {
   presets: [
     ['@babel/preset-react', { runtime: 'automatic' }],
-    '@babel/preset-env'
+    '@babel/preset-env',
   ],
+  plugins: ['babel-plugin-transform-import-meta'], // 👈 añade esto
 };

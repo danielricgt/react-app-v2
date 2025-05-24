@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getGifs } from "../helpers/getgifs";
-const apiKey = import.meta.env.VITE_API_KEY;
+import apiKey from "../config/apikey";
+
 export const useFetchGif = (category) => {
 
 

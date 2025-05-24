@@ -1,9 +1,6 @@
-import React, { useEffect } from 'react'
-
-import { getGifs } from '../helpers/getgifs';
-import { useState } from 'react';
 import { GitItem } from './GitItem';
 import { useFetchGif } from '../hooks/ useFetchGif';
+import PropTypes from 'prop-types';
 
 
 
@@ -33,4 +30,8 @@ console.log({isLoading});
 
         </>
     )
+}
+
+GifGrid.propTypes = {
+    category: PropTypes.string.isRequired,
 }
