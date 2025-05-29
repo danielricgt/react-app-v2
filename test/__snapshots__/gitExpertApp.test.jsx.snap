@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`git expert app test should render the app and match the snapshop 1`] = `
+<div>
+  <form
+    aria-label="form"
+  >
+    <input
+      placeholder="Buscar Gifs"
+      type="text"
+      value=""
+    />
+  </form>
+  <h1>
+    Hola Mundo
+  </h1>
+  <h2>
+    Git Expert App
+  </h2>
+</div>
+`;
